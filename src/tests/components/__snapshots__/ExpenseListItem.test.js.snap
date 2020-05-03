@@ -2,22 +2,15 @@
 
 exports[`should render ExpenseListItem with the given expense data 1`] = `
 <div>
-  <span>
-    Amount: 
-    1500
-  </span>
-  <span>
-    Description: 
-    Rent
-  </span>
-  <span>
-    created at: 
-    0
-  </span>
   <Link
     to="edit/1"
   >
     Edit
   </Link>
+  <p>
+    $15.00
+    -
+    January 1st, 1970
+  </p>
 </div>
 `;
