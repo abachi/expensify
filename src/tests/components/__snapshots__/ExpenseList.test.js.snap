@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseList with the given expenses 1`] = `
+<div>
+  <_default
+    expense={
+      Object {
+        "amount": 1500,
+        "createdAt": 0,
+        "description": "Rent",
+        "id": "1",
+        "note": "",
+      }
+    }
+    key="1"
+  />
+  <_default
+    expense={
+      Object {
+        "amount": 25550,
+        "createdAt": -345600000,
+        "description": "Credit card",
+        "id": "2",
+        "note": "",
+      }
+    }
+    key="2"
+  />
+  <_default
+    expense={
+      Object {
+        "amount": 5000,
+        "createdAt": 345600000,
+        "description": "Gas bill",
+        "id": "3",
+        "note": "",
+      }
+    }
+    key="3"
+  />
+</div>
+`;
+
+exports[`should render message when there is no expenses 1`] = `
+<div>
+  <p>
+    No expenses
+  </p>
+</div>
+`;
