@@ -4,12 +4,14 @@ import { Create } from "../../components/Create";
 import ExpenseForm from "../../components/ExpenseForm";
 import expenses from "../fixtures/expenses";
 
-let wrapper, addExpense, history;
+let wrapper, startAddExpense, history;
 
 beforeEach(() => {
-  addExpense = jest.fn();
+  startAddExpense = jest.fn();
   history = { push: jest.fn() };
-  wrapper = shallow(<Create addExpense={addExpense} history={history} />);
+  wrapper = shallow(
+    <Create startAddExpense={startAddExpense} history={history} />
+  );
 });
 
 test("should render Create expense correctly", () => {
@@ -19,5 +21,5 @@ test("should render Create expense correctly", () => {
 test("should render Create expense correctly", () => {
   wrapper.find(ExpenseForm).prop("onSubmit")(expenses[0]);
   expect(history.push).toHaveBeenCalled();
-  expect(addExpense).toHaveBeenCalledWith(expenses[0]);
+  expect(startAddExpense).toHaveBeenCalledWith(expenses[0]);
 });
