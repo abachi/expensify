@@ -7,12 +7,18 @@ import "normalize.css/normalize.css";
 import "./styles/style.scss";
 import "react-dates/lib/css/_datepicker.css";
 import "./firebase/firebase";
+import { startSetExpenses } from "./actions/expenses";
 
 const store = configureStore();
+
 const app = (
   <Provider store={store}>
     <AppRouter />
   </Provider>
 );
 
-ReactDOM.render(app, document.getElementById("app"));
+ReactDOM.render(<p>Loading...</p>, document.getElementById("app"));
+
+store.dispatch(startSetExpenses()).then(() => {
+  ReactDOM.render(app, document.getElementById("app"));
+});
