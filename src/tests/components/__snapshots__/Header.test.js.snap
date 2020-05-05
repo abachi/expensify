@@ -30,5 +30,8 @@ exports[`should render Header correctly 1`] = `
   >
     Help
   </NavLink>
+  <button>
+    Logout
+  </button>
 </header>
 `;
