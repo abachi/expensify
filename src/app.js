@@ -27,7 +27,6 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log("user", user);
     store.dispatch(login(user));
     store.dispatch(startSetExpenses()).then(() => {
       renderApp();

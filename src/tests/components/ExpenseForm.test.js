@@ -72,7 +72,7 @@ test("should call onSubmit with the correct data", () => {
   expect(wrapper.state("error")).toBe("");
   expect(onSubmitSpy).toHaveBeenLastCalledWith({
     description: expenses[0].description,
-    amount: expenses[0].amount * 100,
+    amount: expenses[0].amount,
     note: expenses[0].note,
     createdAt: expenses[0].createdAt,
   });

@@ -5,9 +5,11 @@ import numeral from "numeral";
 
 export default (props) => (
   <div>
-    <Link to={`edit/${props.expense.id}`}>Edit</Link>
+    <Link to={`edit/${props.expense.id}`}>
+      <h3>{props.expense.description}</h3>
+    </Link>
     <p>
-      {numeral(props.expense.amount / 100).format("$0,0.00")}-
+      {numeral(props.expense.amount).format("$0,0.00")}-
       {moment(props.expense.createdAt).format("MMMM Do, YYYY")}
     </p>
   </div>
