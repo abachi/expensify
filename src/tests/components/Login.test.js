@@ -1,6 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
 import { Login } from "../../components/Login";
+import {
+  githubAuthProvider,
+  googleAuthProvider,
+} from "../../firebase/firebase";
 
 test("should render Login correctly", () => {
   const wrapper = shallow(<Login />);
@@ -8,8 +12,14 @@ test("should render Login correctly", () => {
 });
 
 test("should call startLogin", () => {
+  const startLoginWithGoogle = jest.fn();
+  const startLoginWithGithub = jest.fn();
   const startLogin = jest.fn();
   const wrapper = shallow(<Login startLogin={startLogin} />);
-  wrapper.find("button").simulate("click");
-  expect(startLogin).toHaveBeenCalled();
+  // login with Google
+  wrapper.find("button[name='google-login']").simulate("click");
+  expect(startLogin).toHaveBeenLastCalledWith(googleAuthProvider);
+  // login with Github
+  wrapper.find("button[name='github-login']").simulate("click");
+  expect(startLogin).toHaveBeenLastCalledWith(githubAuthProvider);
 });
