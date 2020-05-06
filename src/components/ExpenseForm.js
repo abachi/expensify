@@ -66,41 +66,44 @@ export default class ExpenseForm extends React.Component {
       calendarFocused,
     } = this.state;
     return (
-      <div>
-        {error.length > 0 && <p>{error}</p>}
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="description"
-            placeholder="Description"
-            value={description}
-            onChange={this.onDescriptionChange}
-            autoFocus
-          />
-          <input
-            type="text"
-            name="amount"
-            placeholder="Amount"
-            value={amount}
-            onChange={this.onAmountChange}
-          />
-          <textarea
-            placeholder="Add a note"
-            value={note}
-            name="note"
-            onChange={this.onNoteChange}
-          ></textarea>
-          <SingleDatePicker
-            date={createdAt}
-            onDateChange={this.onDateChange}
-            focused={calendarFocused}
-            onFocusChange={this.onCalendarFocusChange}
-            numberOfMonths={1}
-            isOutsideRange={() => false}
-          />
-          <button>Add Expense</button>
-        </form>
-      </div>
+      <form className="form" onSubmit={this.handleSubmit}>
+        {error.length > 0 && <p className="form__error">{error}</p>}
+        <input
+          type="text"
+          className="text-input"
+          name="description"
+          placeholder="Description"
+          value={description}
+          onChange={this.onDescriptionChange}
+          autoFocus
+        />
+        <input
+          type="text"
+          className="text-input"
+          name="amount"
+          placeholder="Amount"
+          value={amount}
+          onChange={this.onAmountChange}
+        />
+        <textarea
+          className="textarea"
+          placeholder="Add a note (Optional)"
+          value={note}
+          name="note"
+          onChange={this.onNoteChange}
+        ></textarea>
+        <SingleDatePicker
+          date={createdAt}
+          onDateChange={this.onDateChange}
+          focused={calendarFocused}
+          onFocusChange={this.onCalendarFocusChange}
+          numberOfMonths={1}
+          isOutsideRange={() => false}
+        />
+        <div>
+          <button className="button">Save Expense</button>
+        </div>
+      </form>
     );
   }
 }

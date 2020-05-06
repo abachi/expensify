@@ -1,3 +1,4 @@
+require("@babel/polyfill");
 const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -14,7 +15,7 @@ module.exports = (env) => {
   const isProduction = env === "production";
   return {
     mode: "development",
-    entry: "./src/app.js",
+    entry: ["@babel/polyfill", "./src/app.js"],
     output: {
       path: path.join(__dirname, "public", "dist"),
       filename: "bundle.js",
