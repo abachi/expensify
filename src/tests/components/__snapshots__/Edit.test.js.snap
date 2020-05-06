@@ -1,16 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render the Edit correctly 1`] = `
-<div>
+<div
+  className="page"
+>
   <div
     className="page-header"
   >
     <div
       className="content-container"
     >
-      <h1>
-        Edit Expense
-      </h1>
+      <div
+        className="page-header__body"
+      >
+        <h1>
+          Edit Expense
+        </h1>
+        <div>
+          <button
+            className="button button--secondary"
+            name="remove-btn"
+            onClick={[Function]}
+          >
+            Remove Expense
+          </button>
+        </div>
+      </div>
     </div>
   </div>
   <div
@@ -28,12 +43,11 @@ exports[`should render the Edit correctly 1`] = `
       }
       onSubmit={[Function]}
     />
-    <button
-      className="button button--secondary"
-      onClick={[Function]}
-    >
-      Remove Expense
-    </button>
   </div>
+  <ConfirmationModal
+    isOpen={false}
+    onRemove={[Function]}
+    onRequestClose={[Function]}
+  />
 </div>
 `;

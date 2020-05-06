@@ -8,6 +8,7 @@
   font-size: $text-lg;
   font-weight: 300;
   line-height: 1;
+  border-radius: 3px;
 }
 
 .button--link {
@@ -15,5 +16,9 @@
 }
 
 .button--secondary {
-  background: #888888;
+  background: $secondary;
+}
+
+.button--danger {
+  background: $red;
 }

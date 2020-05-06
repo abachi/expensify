@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ConfirmationModal correctly 1`] = `
+<Modal
+  ariaHideApp={false}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="modal"
+  closeTimeoutMS={0}
+  isOpen={false}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div>
+    <h3
+      className="modal__title"
+    >
+      Do you want remove this expense?
+    </h3>
+    <div
+      className="modal__body"
+    >
+      <button
+        className="button button--secondary"
+        name="cancel-btn"
+      >
+        Cancel
+      </button>
+      <button
+        className="button button--danger"
+      >
+        Sure
+      </button>
+    </div>
+  </div>
+</Modal>
+`;

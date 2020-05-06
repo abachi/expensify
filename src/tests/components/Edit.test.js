@@ -3,6 +3,7 @@ import { shallow } from "enzyme";
 import { Edit } from "../../components/Edit";
 import ExpenseForm from "../../components/ExpenseForm";
 import expenses from "../fixtures/expenses";
+import ConfirmationModal from "../../components/ConfirmationModal";
 
 let startEditExpense, startRemoveExpense, history, wrapper;
 
@@ -31,7 +32,12 @@ test("should submit and handle expense updates", () => {
 });
 
 test("should handle remove expense", () => {
-  wrapper.find("button").prop("onClick")(expenses[0]);
+  wrapper.find(ConfirmationModal).prop("onRemove")(expenses[0]);
   expect(startRemoveExpense).toHaveBeenCalledWith(expenses[0]);
   expect(history.push).toHaveBeenCalled();
+});
+
+test("should hide modal", () => {
+  wrapper.find("button[name='remove-btn']").simulate("click");
+  expect(wrapper.state("isRemoveModalOpen")).toBe(true);
 });

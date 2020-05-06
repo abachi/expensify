@@ -12,6 +12,15 @@
     font-weight: 700;
   }
 }
+.page-header__body {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $desktop-breakpoint){
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
 .page-header__actions {
   margin-top: $m-size;
