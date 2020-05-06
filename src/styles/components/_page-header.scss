@@ -12,6 +12,16 @@
     font-weight: 700;
   }
 }
+.page-header__sub-title {
+  font-size: 1.6rem;
+  margin: 0;
+  font-weight: 100;
+  color: $off-yellow;
+  span {
+    font-weight: 700;
+  }
+}
+
 .page-header__body {
   display: flex;
   flex-direction: column;
